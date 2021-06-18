@@ -1,0 +1,25 @@
+<?xml version="1.0" encoding="utf-8"?>
+<resources>
+    <string name="app_name">Jérusalem</string>
+
+    <string name="enable_DM">Activer le mode sombre</string>
+    <string name="DM">Mode sombre</string>
+    <string name="HQ">Statistiques des démolitions à Jérusalem</string>
+    <string name="txt_size">Taille du texte</string>
+    <string name="txt_news">Tendance</string>
+    <string name="txt_playlist">Listes de lecture</string>
+    <string name="txt_video">Voir toutes nos vidéos</string>
+    <string name="txt_change">Changer de langue</string>
+    <string name="txt_all">Voir tout</string>
+    <string name="txt_far">Signalez votre distance par rapport à la mosquée Al-Aqsa</string>
+    <string name="txt_more">Lire la suite</string>
+    <string name="video">vidéos</string>
+    <string name="details">Les autorités doccupation israéliennes ont classé quatre types de démolitions de maisons :
+
+1- Démolition militaire : Il sagit de la démolition de maisons par larmée doccupation israélienne pour des raisons militaires (sous prétexte de protéger les soldats et les colonies) ; Bien que la plupart des habitants de ces maisons soient innocents ; Cependant, Israël justifie ces actions au nom d« objectifs militaires légaux ». Ce type de démolition ne sapplique pas uniquement à la situation de Silwan  Au contraire, il est répandu dans toute la Cisjordanie et la zone C.
+
+2- Démolition punitive : Il sagit de la démolition des maisons des familles palestiniennes par larmée doccupation israélienne sous prétexte que leurs enfants mènent des opérations militaires contre les Israéliens. Ce type de démolition na pas dobjectifs militaires. Revenant à la IVe Convention de Genève, article 33 : Aucune personne protégée ne peut être punie pour un crime quelle na pas personnellement commis ; Ainsi, la « démolition punitive » contredit le statut de ce traité et larticle 50 des décisions du « Règlement de La Haye ».3- Administrative demolition: It is the most common, and this decision is implemented under the pretext of building without obtaining a license, or under the pretext of the public interest (as some cases appear in the Al-Bustan neighborhood). The ease of issuing the administrative decision for demolition lies in the fact that the municipality engineer issues a report in these cases. while the mayor, in turn, signs it; Although "construction without permits" is also common in the settlements.
+4- Démolition judiciaire : Il s\'agit d\'une décision judiciaire rendue par les tribunaux israéliens, notamment : le Tribunal des affaires locales, le Tribunal central et la Cour suprême. La décision judiciaire de démolition intervient généralement après l\'achèvement des procédures administratives et des décisions rendues par la municipalité de Jérusalem.
+      Il est interdit, selon le principe de base de la loi sur la démolition judiciaire, de punir un individu pour un acte qu\'il n\'a pas personnellement commis ; (De plus, il n\'y a aucune disposition dans le Code pénal israélien qui autorise les autorités israéliennes à empêcher des individus pour les actions d\'autres individus, ce qui est conforme au principe qui prévoit la personnalisation de la peine (peine individuelle).</string>
+    <string name="title_activity_maps">Map</string>
+</resources>

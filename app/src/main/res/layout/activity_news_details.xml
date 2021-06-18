@@ -1,0 +1,116 @@
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.motion.widget.MotionLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".activites.NewsDetailsActivity"
+    app:layoutDescription="@xml/activity_news_details_scene">
+
+    <ImageView
+        android:id="@+id/headerImg"
+        android:layout_width="0dp"
+        android:layout_height="0dp"
+        android:scaleType="centerCrop"
+        app:layout_constraintBottom_toTopOf="@+id/contentLayout"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/ceramic_mug" />
+
+    <LinearLayout
+        android:id="@+id/contentLayout"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="?attr/cardBackgroundColor"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txt_desc"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:paddingLeft="32dp"
+            android:textColor="?attr/textColor"
+            android:paddingRight="32dp"
+            android:paddingBottom="32dp"
+            android:text="مع المرابطة هنادي الموسم الثاني الحلقة الخامسة- باب المغاربة مع المرابطة هنادي الموسم الثاني الحلقة الخامسة- باب المغاربة مع المرابطة هنادي الموسم الثاني الحلقة الخامسة- باب المغاربة " />
+
+        <TextView
+            android:id="@+id/txt_url"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingBottom="32dp"
+            android:textSize="17dp"
+            android:textColor="@android:color/holo_blue_dark"
+            android:textAppearance="@style/Widget.AppCompat.Spinner.Underlined"
+            android:text="@string/txt_more"
+            />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <TextView
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:padding="10dp"
+                android:text="@string/txt_size"
+                android:textColor="#0B99DA"
+                android:textSize="16dp" />
+
+            <ImageButton
+                android:id="@+id/news_plus"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_control_point_24" />
+
+            <ImageButton
+                android:id="@+id/news_mines"
+                android:layout_width="30dp"
+                android:layout_height="30dp"
+                android:background="@drawable/ic_baseline_remove_circle_outline_24" />
+
+        </LinearLayout>
+    </LinearLayout>
+
+    <LinearLayout
+        android:id="@+id/titleLayout"
+        android:layout_width="0dp"
+        android:layout_height="wrap_content"
+        android:orientation="vertical"
+        android:background="@drawable/title_layout_bg"
+        app:layout_constraintBottom_toBottomOf="@+id/headerImg"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent">
+
+        <TextView
+            android:id="@+id/txt_title"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:fontFamily="@font/raleway_semibold"
+            android:padding="32dp"
+            android:textColor="?attr/textColor"
+            android:text="اكتشف المزيد"
+            android:textSize="22dp" />
+
+        <TextView
+            android:id="@+id/txt_date"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:paddingLeft="32dp"
+            android:paddingRight="32dp"
+            android:paddingBottom="32dp"
+            android:text="2021/2/8" />
+    </LinearLayout>
+</androidx.constraintlayout.motion.widget.MotionLayout>
