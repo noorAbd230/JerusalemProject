@@ -52,7 +52,7 @@ class PlayListsAdapter(var activity: Activity, var name:String , var data: Mutab
 
         if (name=="Home"){
             holder.title.text = dbHelper.getThreePlayList()[position].title
-            Picasso.get().load(data[position].img).into(holder.img)
+            Picasso.get().load(data[position].img).error(R.drawable.image_splash).into(holder.img)
             holder.card.setOnClickListener {
                 var i = Intent(activity, PlaylistVideosActivity::class.java)
                 i.putExtra("img",data[position].img)
@@ -62,10 +62,10 @@ class PlayListsAdapter(var activity: Activity, var name:String , var data: Mutab
             }
         }else{
             holder.gridTitle.text = dbHelper.getAllPlayList()[position].title
-            Picasso.get().load(data[position].img).into(holder.gridImg)
+            Picasso.get().load(data[position].img).error(R.drawable.image_splash).into(holder.gridImg)
 
             holder.gridImg.animation = AnimationUtils.loadAnimation(activity,R.anim.fade_transition_animation)
-            holder.gridCard.animation = AnimationUtils.loadAnimation(activity,R.anim.fade_scale_animation)
+
             holder.gridCard.setOnClickListener {
                 var i = Intent(activity, PlaylistVideosActivity::class.java)
                 i.putExtra("gridImg",data[position].img)

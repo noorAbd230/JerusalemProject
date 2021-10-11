@@ -98,13 +98,7 @@ class SettingActivity : AppCompatActivity() {
         mDialog.show()
     }
 
-    private fun trackScreen(screenName:String) {
-        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
-            param(FirebaseAnalytics.Param.SCREEN_NAME, screenName)
-            param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
-        }
 
-    }
 
     private fun setLocale(lang:String) {
 
@@ -122,8 +116,15 @@ class SettingActivity : AppCompatActivity() {
 
     private fun loadLoacle(){
         var prefs=getSharedPreferences("Settings", Activity.MODE_PRIVATE)
-        val language:String? = prefs.getString("My_Lang","")
+        val language:String? = prefs.getString("My_Lang","ar")
         println("RESULT$language")
         setLocale(language!!)
+    }
+    private fun trackScreen(screenName:String) {
+        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+            param(FirebaseAnalytics.Param.SCREEN_NAME, screenName)
+            param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
+        }
+
     }
 }

@@ -5,6 +5,7 @@ import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import com.example.jerusalemapplication.R
 import com.google.android.exoplayer2.C
+import com.google.android.exoplayer2.ExoPlaybackException
 import com.google.android.exoplayer2.ExoPlayerFactory
 import com.google.android.exoplayer2.SimpleExoPlayer
 import com.google.android.exoplayer2.audio.AudioAttributes
@@ -48,6 +49,7 @@ class VideoDisplayActivity : AppCompatActivity() {
 
         player!!.setAudioAttributes(audioAttributes, true)
 
+
     }
 
     fun releaseVideo(){
@@ -79,6 +81,11 @@ class VideoDisplayActivity : AppCompatActivity() {
 
     override fun onStop() {
         super.onStop()
+        releaseVideo()
+    }
+
+    override fun onDestroy() {
+        super.onDestroy()
         releaseVideo()
     }
 

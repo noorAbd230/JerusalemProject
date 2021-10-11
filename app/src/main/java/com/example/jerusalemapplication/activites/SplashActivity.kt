@@ -133,6 +133,7 @@ class SplashActivity : AppCompatActivity() , GoogleApiClient.ConnectionCallbacks
                                                 MainActivity::class.java
                                             )
                                         )
+                                        finish()
                                     }, SPLASH_DISPLAY_LENGTH.toLong())
                                 }
                             } else {

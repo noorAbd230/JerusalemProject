@@ -32,7 +32,7 @@ class ImageSliderAdapter(var activity: Activity, var data: MutableList<SliderIte
     }
 
     override fun onBindViewHolder(holder: MyViewHolder, position: Int) {
-        Picasso.get().load(data[position].img).into(holder.imageSlider)
+        Picasso.get().load(data[position].img).error(R.drawable.image_splash).into(holder.imageSlider)
         holder.title.text = data[position].title
         holder.imageSlider.setOnClickListener {
             var i = Intent(activity, NewsDetailsActivity::class.java)

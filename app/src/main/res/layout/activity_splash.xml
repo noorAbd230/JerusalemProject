@@ -31,7 +31,7 @@
             android:layout_gravity="center"
             android:layout_marginTop="10dp"
             android:fontFamily="cursive"
-            android:text="قدسنا"
+            android:text="@string/app_name"
             android:textColor="#f7b425"
             android:textSize="35dp"
             android:textStyle="bold" />

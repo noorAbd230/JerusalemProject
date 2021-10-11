@@ -1,9 +1,13 @@
 package com.example.jerusalemapplication.activites
 
+import android.annotation.SuppressLint
+import android.content.Context
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.util.TypedValue
+import androidx.annotation.AttrRes
+import androidx.annotation.ColorInt
 import com.example.jerusalemapplication.R
 import com.example.jerusalemapplication.model.SharedPref
 import com.github.mikephil.charting.data.BarData
@@ -21,6 +25,7 @@ class ChartActivity : AppCompatActivity() {
     lateinit var firebaseAnalytics: FirebaseAnalytics
     lateinit var sharedPref: SharedPref
 
+    @SuppressLint("ResourceType")
     override fun onCreate(savedInstanceState: Bundle?) {
         sharedPref = SharedPref(this)
         if (sharedPref.loadNightModeState()){
@@ -46,7 +51,7 @@ class ChartActivity : AppCompatActivity() {
         visitors.add(BarEntry(2019F, 169F))
         var barDataSet = BarDataSet(visitors, "عمليات الهدم")
         barDataSet.setColors(*ColorTemplate.MATERIAL_COLORS)
-        barDataSet.valueTextColor = Color.BLACK
+        barDataSet.valueTextColor = getColorFromAttr(R.attr.textColor)
         barDataSet.valueTextSize = 16F
         var bardata = BarData(barDataSet)
         bar_chart.setFitBars(true)
@@ -74,5 +79,15 @@ class ChartActivity : AppCompatActivity() {
             param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
         }
 
+    }
+
+    @ColorInt
+    fun Context.getColorFromAttr(
+        @AttrRes attrColor: Int,
+        typedValue: TypedValue = TypedValue(),
+        resolveRefs: Boolean = true
+    ): Int {
+        theme.resolveAttribute(attrColor, typedValue, resolveRefs)
+        return typedValue.data
     }
 }

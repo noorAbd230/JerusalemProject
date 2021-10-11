@@ -47,6 +47,7 @@ class LibraryDetailsActivity : AppCompatActivity() {
             sendIntent.putExtra(Intent.EXTRA_TEXT, "القدس : \n $details")
             sendIntent.type = "text/plain"
             startActivity(sendIntent)
+            finish()
         }
 
         firebaseAnalytics = Firebase.analytics

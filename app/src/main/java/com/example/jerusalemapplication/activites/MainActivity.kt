@@ -37,7 +37,7 @@ import java.nio.charset.Charset
 import kotlin.math.abs
 
 class MainActivity : AppCompatActivity() {
-    val url="https://newsapi.org/v2/everything?q=%D8%A7%D9%84%D9%82%D8%AF%D8%B3&from=2021-06-15&sortBy=popularity&apiKey=0b4a7555206b4f9eada242d9501d5efc"
+    val url="https://newsapi.org/v2/everything?q=%D8%A7%D9%84%D9%82%D8%AF%D8%B3&from=2021-06-22&sortBy=popularity&apiKey=0b4a7555206b4f9eada242d9501d5efc"
     var handler = Handler()
     lateinit var db: FirebaseFirestore
     lateinit var sharedPref: SharedPref
@@ -158,7 +158,6 @@ class MainActivity : AppCompatActivity() {
                 override fun getHeaders(): MutableMap<String, String> {
                     val headers =
                         HashMap<String, String>()
-
                     headers["User-Agent"] = "Mozilla/5.0"
                     return headers
                 }
@@ -177,7 +176,7 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun insertTitle(){
-        val dbHelper = DatabaseHelper(this)
+        val dbHelper = DatabaseHelper(this)//resources.getString(R.string.video_one_title)
         dbHelper.insertPlayListName("مع المرابطة هنادي 1","أسماء المسجد الأقصى مع المرابطة هنادي,حقيقة المسجد الأقصى مع المرابطة هنادي,تهويد القدس مع المرابطة هنادي,ضريبة الارنونا مع المرابطة هنادي,التقسيم الزماني مع المرابطة هنادي,المصلى المرواني مع المرابطة هنادي,البلدة القديمة وأقساامها مع المرابطة هنادي,حرمة المسجد الاقصى مع المرابطة هنادي")
         dbHelper.insertPlayListName("يوسف ومريم – الموسم الأول –","يوسف ومريم - تاريخ بيت المقدس,يوسف ومريم - اسم المسجد الأقصى,يوسف ومريم - ما هو المسجد الأقصى؟,يوسف ومريم - حفريات المسجد الأقصى,يوسف ومريم - معالم المسجد الأقصى,يوسف ومريم - علاقة المسجد الأقصى بالمسجد الحرام,يوسف ومريم - فضائل المسجد الاقصى,يوسف ومريم - فضائل المسجد الاقصى2")
         dbHelper.insertPlayListName("فلاشات مقدسية – الموسم الثالث –","التهويد_معلومة مقدسية,هضبة موريا_معلومة مقدسية,قدس واحدة_معلومة مقدسية,مصلى الأنبياء_معلومة مقدسية,ليس حرماً_معلومة مقدسية,ما هو المسجد الأقصى_معلومة مقدسية,التقسيم الزماني والمكاني_معلومة مقدسية,علاقة المسجد الحرام بالمسجد الأقصى")

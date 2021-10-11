@@ -3,6 +3,7 @@ package com.example.jerusalemapplication.activites
 import android.Manifest
 import android.content.pm.PackageManager
 import android.location.Location
+import android.os.Build
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
 import android.os.Looper
@@ -78,6 +79,23 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         ) {
             return
         }
+        if (if (Build.VERSION.SDK_INT >= Build.VERSION_CODES.M) {
+                checkSelfPermission(Manifest.permission.ACCESS_FINE_LOCATION) != PackageManager.PERMISSION_GRANTED && checkSelfPermission(
+                        Manifest.permission.ACCESS_COARSE_LOCATION
+                    ) != PackageManager.PERMISSION_GRANTED
+            } else {
+                TODO("VERSION.SDK_INT < M")
+            }
+        ) {
+            // TODO: Consider calling
+            //    Activity#requestPermissions
+            // here to request the missing permissions, and then overriding
+            //   public void onRequestPermissionsResult(int requestCode, String[] permissions,
+            //                                          int[] grantResults)
+            // to handle the case where the user grants the permission. See the documentation
+            // for Activity#requestPermissions for more details.
+            return
+        }
         mMap.isMyLocationEnabled = true
         mMap.setMapStyle(MapStyleOptions.loadRawResourceStyle(this, R.raw.mapstyle))
 
@@ -132,14 +150,7 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
         }
     }
 
-    private fun trackScreen(screenName:String) {
-        firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
-            param(FirebaseAnalytics.Param.SCREEN_NAME, screenName)
-            param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
-        }
 
-    }
-}
 
 
         fun getLocationRequest(): LocationRequest? {
@@ -148,7 +159,14 @@ class MapsActivity : AppCompatActivity(), OnMapReadyCallback {
             locationRequest.interval = 3000
             return locationRequest
         }
+private fun trackScreen(screenName:String) {
+    firebaseAnalytics.logEvent(FirebaseAnalytics.Event.SCREEN_VIEW) {
+        param(FirebaseAnalytics.Param.SCREEN_NAME, screenName)
+        param(FirebaseAnalytics.Param.SCREEN_CLASS, "MainActivity")
+    }
 
+}
+}
         private fun calculateDistance(x: LatLng, y: LatLng) : Float {
             var location = Location("")
             location.latitude = x.latitude

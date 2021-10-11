@@ -64,6 +64,7 @@ class NewsDetailsActivity : AppCompatActivity() {
         var uri = Uri.parse(url)
         var i = Intent(Intent.ACTION_VIEW,uri)
         startActivity(i)
+        finish()
     }
 
     private fun trackScreen(screenName:String) {
